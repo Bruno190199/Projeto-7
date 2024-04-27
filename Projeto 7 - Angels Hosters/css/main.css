@@ -1,0 +1,308 @@
+:root{
+    --primary_color: #612674;
+}
+
+html{
+    font-family: sans-serif;
+
+}
+
+.max_width{
+    max-width: 70.25em;
+    margin: auto
+}
+
+.top_header{
+    text-align:center
+}
+
+.top_header_nav{
+    background-color: var(--primary_color);
+}
+
+.top_header_nav ul{
+    list-style-type: none;
+    padding:0;
+    margin-bottom: 0;
+}
+
+/*   O display:block é fundamental pra transformar a tag A em um elemento de block, caso não, só seria clicavel por exemplo
+a área onde está o texto*/
+
+
+.top_header_nav a {
+    color:white;
+    text-decoration: none;
+    display: block;
+    padding:1em;
+}
+
+.top_header_nav li:hover{
+    background-color: color-mix(in srgb, var(--primary_color), white 10%);
+
+}
+
+/*  md - middle */
+
+@media screen and (min-width: 48.75em){
+.top_header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.top_header_nav {
+    background-color: initial;
+
+}
+
+.top_header_nav li{
+    display: inline-block;
+}
+
+.top_header_nav a{
+    color: var(--primary_color)
+}
+
+.top_header_nav a:hover{
+    background-color: color-mix(in srgb, var(--primary_color), white 85%);
+}
+
+.top_header_logo{
+
+    margin-left:1.5em;
+
+    }
+}
+
+.HeroBanner{
+    text-align: center;
+    background-color: #f6f6f6;
+    padding:1em;
+}
+
+.HeroBanner_iconPlay{
+    height: 5em;
+    width:5em;
+    display: none;
+}
+
+.HeroBanner_iconPlay img{
+    width: 100%;
+}
+
+.HeroBanner_title{
+    color:var(--primary_color);
+    font-size:1.5em;
+    margin:1.5em 0;
+}
+
+.HeroBanner_subtitle{
+    font-size:1em;
+    color:color-mix(in srgb, var(--primary_color) percentage, white 50%);
+    line-height: 1.5;
+}
+
+.Hero_Banner_btn{
+    display: inline-block;
+    padding: .9em 2em;
+    background-color: #58c4c4;
+    text-decoration: none;
+    border-radius: 5px;
+    color:white;
+}
+
+/*  md - middle*/
+
+@media screen and (min-width: 48.75em){
+
+    .HeroBanner{
+        background-color: var(--primary_color);
+        color: white
+    }
+
+    .HeroBanner_iconPlay{
+        display: block;
+        margin:auto
+    }
+
+    .HeroBanner_title,.HeroBanner_subtitle{
+        color:white
+    }
+
+}
+
+
+/*   O "Aspect-radio" abaixo, serve para equiparar o tamanho do Herobanner, ao tamanho da imagem de fundo */
+
+/* lg - Large */
+
+@media screen and (min-width: 56.25em){
+.HeroBanner{background-image: url(../images/bg_topo_1198x670.jpg);
+aspect-ratio: 1198 /670;
+display: flex;
+justify-content: center;
+align-items: flex-end;
+
+}
+
+.HeroBanner .Max_Width{
+    margin: initial;
+    width:75%;
+    margin-bottom: 4em;
+}
+}
+
+
+/* xl - extra-large */
+
+@media  screen and (min-width:74em) {
+
+.HeroBanner{
+    background-image: linear-gradient(transparent,var(--primary_color)),url(../images/bg_topo_1600x1374.jpg);
+    background-blend-mode:soft-light ;
+    max-height: 80vh;
+    width: 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: var(--primary_color);
+}
+
+.HeroBanner .Max_Width{
+    width:50%;
+}
+
+.HeroBanner_iconPlay{
+    width:7em;
+    height: 7em;
+}
+}
+    
+/*
+
+min-width: 0  -> col - "sm"
+min-widht: 48.75em -> col - "md"
+min-widht: 56.25em -> col - "lg" 
+min-width: 74em -> col - "xl"
+
+
+*/
+
+.middle-content{
+    background-color: #f6f6f6;
+    text-align: center;
+    padding: 2em;
+}
+
+
+.middle-content a{
+text-decoration: none;
+color:inherit;
+}
+
+.middle-content_title{
+    color:var(--primary_color);
+    text-transform: uppercase;
+    font-size:1.25em
+}
+
+.middle-content span[class^="icon-"]{
+    font-size: 3.5em;
+    color:var(--primary_color)
+}
+
+.middle-content p{
+    line-height: 1.75em;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1em
+}
+
+.col{
+    flex: 1 0 auto;
+    width:100%
+}
+
+.col-sm-12{
+    width:100%
+}
+
+@media screen and (min-width:48.75em){
+    .col-md-6{
+        width:calc(50% - 1rem)
+    }
+}
+
+@media screen and (min-width:74em){
+    .col-xl-3{
+        width:calc(25% - 1rem)
+    }
+    .col-xl-6{
+        width:calc(50% - 1rem)
+    }
+}
+
+.mainContent{
+    padding: 2em;
+}
+
+.mainContent p{
+    line-height: 1.2;
+}
+
+.mainContent_img img{
+    width: 100%;
+}
+
+.mainContent_title{
+    text-transform: uppercase;
+    color: var(--primary_color);
+    font-weight: normal;
+    letter-spacing: .2em;
+    font-size: 1.25em;
+}
+
+
+.mainContent .row{
+   row-gap:4em;
+}
+
+.mainContent_article{
+    container-type: inline-size;
+    container-name: main-content;
+}
+
+@container main-content (min-width: 500px){
+    .mainContent_container{
+        display: flex;
+    gap:1rem}
+    
+    .mainContent_title{
+margin-top: 0;
+    }
+
+    .mainContent_img img{
+        max-height: 182px;
+    }
+
+}
+
+.footer{
+    background-color: gray;
+    text-align: center;
+    color:white;
+    padding: 2em;
+}
+
+.mainContent_img{
+    flex:0 0 25%
+}
+
+.mainContent_text{
+    flex-grow: 1;
+}
+
+
+
